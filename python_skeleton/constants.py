@@ -26,5 +26,4 @@ def hand_to_strength(card1, card2):
     print(idxes)
     return strengths[idxes[0]][idxes[1]]
 
-print(hand_to_strength("J2"))
 
