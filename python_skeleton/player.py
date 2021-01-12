@@ -27,7 +27,7 @@ class Player(Bot):
         Returns:
         Nothing.
         '''
-        self.board_allocations = allocate(self, my_cards).reverse()
+        pass
 
     def allocate(self, cards): 
         card_ranks = [c[0] for c in cards]
@@ -71,6 +71,7 @@ class Player(Bot):
         my_cards = round_state.hands[active]  # your six cards at teh start of the round
         big_blind = bool(active)  # True if you are the big blind
         self.board_allocations = self.allocate(my_cards)
+        self.board_allocations.reverse()
 
     def calculate_strength(self, hole, board_cards, iters): 
         '''
@@ -196,7 +197,7 @@ class Player(Bot):
 
 
 if __name__ == '__main__':
-    #run_bot(Player(), parse_args())
-    b = Player()
-    print(b.allocate(["AS", "KH", "2D", "2D", "TH", "3H"]))
-    print(b.allocate(["AS", "KH", "2D", "AD", "TH", "3H"]))
+    run_bot(Player(), parse_args())
+    # b = Player()git
+    # print(b.allocate(["AS", "KH", "2D", "2D", "TH", "3H"]))
+    # print(b.allocate(["AS", "KH", "2D", "AD", "TH", "3H"]))
