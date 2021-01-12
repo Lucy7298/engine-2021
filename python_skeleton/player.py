@@ -175,6 +175,11 @@ class Player(Bot):
             if AssignAction in legal_actions[i]:
                 cards = self.board_allocations[i]
                 my_actions[i] = AssignAction(cards)
+            if street < 3: 
+                if CheckAction in legal_actions[i]:  # check-call
+                    my_actions[i] = CheckAction()
+                elif CallAction in legal_actions[i]:
+                    my_actions[i] = CallAction()
             else: 
                 #self.calculate_strength(self.board_allocations[i], board_cards, 100)
                 if RaiseAction(stacks[0]/3) in legal_actions[i]:
@@ -193,6 +198,6 @@ class Player(Bot):
 
 if __name__ == '__main__':
     run_bot(Player(), parse_args())
-    #b = Player()
-    #print(b.allocate(["AS", "KH", "2D", "2D", "TH", "3H"]))
-    #print(b.allocate(["AS", "KH", "2D", "AD", "TH", "3H"]))
+    # b = Player()git
+    # print(b.allocate(["AS", "KH", "2D", "2D", "TH", "3H"]))
+    # print(b.allocate(["AS", "KH", "2D", "AD", "TH", "3H"]))
