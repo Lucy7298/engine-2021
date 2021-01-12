@@ -184,7 +184,7 @@ class Player(Bot):
 
 
 if __name__ == '__main__':
-    #run_bot(Player(), parse_args())
-    b = Player()
-    print(b.allocate(["AS", "KH", "2D", "2D", "TH", "3H"]))
-    print(b.allocate(["AS", "KH", "2D", "AD", "TH", "3H"]))
+    run_bot(Player(), parse_args())
+    #b = Player()
+    #print(b.allocate(["AS", "KH", "2D", "2D", "TH", "3H"]))
+    #print(b.allocate(["AS", "KH", "2D", "AD", "TH", "3H"]))
