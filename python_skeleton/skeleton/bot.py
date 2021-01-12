@@ -21,7 +21,6 @@ class Bot():
         Returns:
         Nothing.
         '''
-        raise NotImplementedError('get_actions')
 
     def handle_round_over(self, game_state, terminal_state, active):
         '''
@@ -35,7 +34,7 @@ class Bot():
         Returns:
         Nothing.
         '''
-        raise NotImplementedError('get_actions')
+
 
     def get_actions(self, game_state, round_state, active):
         '''
@@ -51,3 +50,4 @@ class Bot():
         Your actions.
         '''
         raise NotImplementedError('get_actions')
+

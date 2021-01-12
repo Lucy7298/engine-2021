@@ -178,7 +178,7 @@ class Player(Bot):
             if street < 3: 
                 if CheckAction in legal_actions[i]:  # check-call
                     my_actions[i] = CheckAction()
-                else:
+                elif CallAction in legal_actions[i]:
                     my_actions[i] = CallAction()
             else: 
                 #self.calculate_strength(self.board_allocations[i], board_cards, 100)
