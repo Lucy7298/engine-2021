@@ -37,7 +37,6 @@ class Player(Bot):
                 strength = hand_to_strength(card_ranks[i], card_ranks[j])
                 strengths[(i, j)] = strength
         rank_pairs = sorted(list(strengths.items()), key=lambda i: i[1], reverse=True)
-        print(rank_pairs)
         cards_put = set()
         pair_kept = []
         for pair in rank_pairs: 
@@ -172,21 +171,17 @@ class Player(Bot):
         my_actions = [None] * NUM_BOARDS
 
         for i in range(NUM_BOARDS):
+            print("bot reached street", street)
             if AssignAction in legal_actions[i]:
                 cards = self.board_allocations[i]
                 my_actions[i] = AssignAction(cards)
-            if street < 3: 
-                if CheckAction in legal_actions[i]:  # check-call
-                    my_actions[i] = CheckAction()
-                else:
-                    my_actions[i] = CallAction()
             else: 
                 #self.calculate_strength(self.board_allocations[i], board_cards, 100)
                 if RaiseAction(stacks[0]/3) in legal_actions[i]:
                     my_actions[i] = RaiseAction(stacks[0]/3)
                 elif CallAction in legal_actions[i]:
                     my_actions[i] = CallAction()
-                elif RaiseActions(stacks[0]) in legal_actions[i]:
+                elif RaiseAction(stacks[0]) in legal_actions[i]:
                     my_actions[i] = RaiseActions(stack[0])
                 elif CheckAction in legal_actions[i]:
                     my_actions[i] = CheckAction()

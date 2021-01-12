@@ -23,7 +23,6 @@ def hand_to_strength(card1, card2):
     idxes = [MAX_ORD - char_to_ord[card1], MAX_ORD - char_to_ord[card2]]
     #only use one half of my assymetric table
     idxes = sorted(idxes)
-    print(idxes)
     return strengths[idxes[0]][idxes[1]]
 
 
