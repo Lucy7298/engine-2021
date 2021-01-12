@@ -27,7 +27,7 @@ class Player(Bot):
         Returns:
         Nothing.
         '''
-        pass
+        self.board_allocations = [[], [], []]
 
     def allocate(self, cards): 
         card_ranks = [c[0] for c in cards]
